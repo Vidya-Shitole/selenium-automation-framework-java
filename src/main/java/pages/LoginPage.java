@@ -11,7 +11,7 @@ import common.WebDriverFactory;
 public class LoginPage {
 	
 	@FindBy(id="txtUsername")
-	private WebElement username;
+	private WebElement usernm;
 	
 	@FindBy(id="txtPassword")
 	private WebElement paswd;
@@ -33,7 +33,7 @@ public class LoginPage {
 	
 	public HomePage Login(String uname,String pswd)
 	{
-		username.sendKeys(uname);
+		usernm.sendKeys(uname);
 		paswd.sendKeys(pswd);
 		btnlogin.click();
 		
