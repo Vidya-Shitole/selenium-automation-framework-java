@@ -1,5 +1,5 @@
 package pages;
-//import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -20,7 +20,7 @@ public class HomePage {
 
 		public HomePage() {
 		PageFactory.initElements(WebDriverFactory.threadStorage.get(), this);
-		wait = new WebDriverWait(WebDriverFactory.threadStorage.get(), 30);   //Initialized in constructor
+		wait = new WebDriverWait(WebDriverFactory.threadStorage.get(), 30);   
 		}
 	
 		public HomePage verifyWelcomeText(String ExpectedWelcomeText)
@@ -32,7 +32,8 @@ public class HomePage {
 		public AdminPage navigateToAdminpage() {
 		admintab.click();
 		return new AdminPage().isPageLoaded();
-	}
+		}
+		
 		public HomePage isPageLoaded()
 		{
 			wait.until(ExpectedConditions.visibilityOf(admintab));

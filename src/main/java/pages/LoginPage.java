@@ -5,13 +5,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 import common.WebDriverFactory;
 
 public class LoginPage {
 	
 	@FindBy(id="txtUsername")
-	private WebElement usernm;
+	private WebElement username;
 	
 	@FindBy(id="txtPassword")
 	private WebElement paswd;
@@ -33,7 +33,7 @@ public class LoginPage {
 	
 	public HomePage Login(String uname,String pswd)
 	{
-		usernm.sendKeys(uname);
+		username.sendKeys(uname);
 		paswd.sendKeys(pswd);
 		btnlogin.click();
 		

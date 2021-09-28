@@ -11,13 +11,12 @@ import common.WebDriverFactory;
 public class AdminPage {
 
 	@FindBy(id="btnAdd")
-	 WebElement addUserButton;
+	WebElement addUserButton;
 		
 	private WebDriverWait wait;
 	
- public AdminPage() 
+	public AdminPage() 
 	{
-		
 		PageFactory.initElements(WebDriverFactory.threadStorage.get(), this);
 		wait = new WebDriverWait(WebDriverFactory.threadStorage.get(), 20);
 		isPageLoaded();

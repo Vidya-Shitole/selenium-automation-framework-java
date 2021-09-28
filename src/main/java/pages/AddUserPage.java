@@ -10,8 +10,9 @@ import common.WebDriverFactory;
 
 public class AddUserPage {
 
-@FindBy(id="btnAdd")
-private WebElement addUserButton;
+	@FindBy(id="btnAdd")
+	private WebElement addUserButton;
+	
 	@FindBy(id="systemUser_userType")
 	private WebElement userRole ;
 	
@@ -48,7 +49,7 @@ private WebElement addUserButton;
 		userpswd.sendKeys(UPswd);
 		saveButton.click();
 		return new AdminPage().isPageLoaded();
-}
+	}
  public AddUserPage isPageLoaded()
 	{
 		wait.until(ExpectedConditions.visibilityOf(empName));

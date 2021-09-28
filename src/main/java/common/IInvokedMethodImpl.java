@@ -11,18 +11,17 @@ public class IInvokedMethodImpl implements IInvokedMethodListener{
 
 	@Override
 	public void beforeInvocation(IInvokedMethod arg0, ITestResult arg1) {
-	
-		System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
-		
-		WebDriverFactory.threadStorage.set(new ChromeDriver());   //assignment driver
+		System.setProperty("webdriver.chrome.driver","C:\\chromedriver_win32\\chromedriver.exe");
+		WebDriverFactory.threadStorage.set(new ChromeDriver());   
 		//WebDriverFactory.driver.manage().window().maximize();
-		WebDriverFactory.threadStorage.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		WebDriverFactory.threadStorage.get().get("https://opensource-demo.orangehrmlive.com/"); //.get().get = obj. chaining	
+		WebDriverFactory.threadStorage.get().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+		WebDriverFactory.threadStorage.get().get("https://opensource-demo.orangehrmlive.com/"); 
 	}
+	
 	@Override
 	public void afterInvocation(IInvokedMethod method, ITestResult testResult) 
 	{
 		//IInvokedMethodListener.super.afterInvocation(method, testResult);
-		WebDriverFactory.threadStorage.get().quit();   //driver = threadStorage.get();
+		WebDriverFactory.threadStorage.get().quit();   
 	}
 }
